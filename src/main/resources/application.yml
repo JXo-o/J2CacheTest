@@ -8,6 +8,7 @@ j2cache:
   syncTtlToRedis: true
   defaultCacheNullObject: true
   broadcastProperties:
+
     blockWhenExhausted: false
     channel: j2cache
     channel.host: ''
@@ -33,6 +34,22 @@ j2cache:
     testWhileIdle: true
     timeBetweenEvictionRunsMillis: 300000
     timeout: 2000
+
+#    hosts: 127.0.0.1:9876
+#    name: j2cache
+#    topic: j2cache
+
+#      channel:
+#        name: j2cache
+#      configXml: /network.xml
+
+#    exchange: j2cache
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtualHost: /
+
   l1CacheProperties:
     properties: /caffeine.properties
   l2CacheProperties:
