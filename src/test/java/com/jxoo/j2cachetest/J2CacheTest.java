@@ -84,6 +84,23 @@ public class J2CacheTest {
     }
 
     @Test
+    public void testMap0() {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("key1", 1);
+        map.put("key2", 2);
+        map.put("key3", 3);
+        j2Cache.getChannel().set("region-2", "map", map, 10, true);
+        System.out.println(redColor + j2Cache.getChannel().get("region-2", "map") + defaultColor);
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(redColor + j2Cache.getChannel().get("region-2", "map") + defaultColor);
+    }
+
+
+    @Test
     public void testRabbitMq() {
         ClusterPolicy policy = j2Cache.getBuilder().getPolicy();
         Command cmd = new Command();
