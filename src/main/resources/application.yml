@@ -9,6 +9,8 @@ j2cache:
   defaultCacheNullObject: true
   broadcastProperties:
 
+#以下4块内容分别对应 redis、rocketmq、jgroups、rabbitmq，需要哪一个解开注释即可。
+
     blockWhenExhausted: false
     channel: j2cache
     channel.host: ''
